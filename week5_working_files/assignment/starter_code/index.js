@@ -2,30 +2,29 @@ $(document).ready(function() {});
 
 function changeCity() {
   var city = $("#city-type").val();
+  //$("#city-type").val(''); sets the input field to empty
+  city = city.toLowerCase().trim();
+  // trim will remove white space
 
   if (city === "NYC" || city === "nyc" || city === "New York City") {
-    $("body").addClass("nyc");
-    $("body").removeClass("sf", "la", "austin", "sydney");
+    $("body").attr("class", "nyc");
+    //attr cleans out the class and replacing it with just the one you want - in this case its nyc//
+    // console.log(city);
+
+  } else if (city === "sf" || city === "Bay Area") {
+    $("body").attr("class", "sf");
 
 
-  } else if (city ==="SF" || city === "Bay Area") {
-    $("body").addClass("sf");
-    $("body").removeClass("nyc", "la", "austin", "sydney");
+  } else if (city === "la" || city === "Los Angeles") {
+    $("body").attr("class", "la");
 
 
-  } else if (city ===  "LA" || city === "Los Angeles") {
-    $("body").addClass("la");
-    $("body").removeClass("sf", "nyc", "austin", "sydney");
+  } else if (city === "austin" || city === "ATX") {
+    $("body").attr("class", "austin");
 
 
-  } else if (city === "AUSTIN" || city === "ATX") {
-    $("body").addClass("austin");
-    $("body").removeClass("sf", "la", "nyc", "sydney");
-
-
-  } else if (city === "SYDNEY" || city === "SYD") {
-    $("body").addClass("sydney");
-    $("body").removeClass("sf", "la", "austin", "nyc");
+  } else if (city === "sydney" || city === "SYD") {
+    $("body").attr("class", "sydney");
 
   } else {
     alert("Please enter a city name.")
