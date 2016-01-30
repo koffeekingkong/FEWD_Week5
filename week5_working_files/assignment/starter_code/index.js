@@ -2,7 +2,7 @@ $(document).ready(function() {});
 
 function changeCity() {
   var city = $("#city-type").val();
-  //$("#city-type").val(''); sets the input field to empty
+  $("#city-type").val(''); //sets the input field to empty
   city = city.toLowerCase().trim();
   // trim will remove white space
 
